@@ -1,0 +1,8 @@
+<h1>Questions</h1>
+{% for question in questions %}
+    <a href="{% url 'question_detail' question.pk %}"><h2>{{ question.title }}</h2></a>
+    <p>By: {{ question.author.username }}</p>
+    <p>{{ question.content }}</p>
+{% endfor %}
+<a href="{% url 'question_create' %}">Ask a Question</a>
+<a href="{% url 'logout' %}">Logout</a>
